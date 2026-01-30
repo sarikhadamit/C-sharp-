@@ -1,0 +1,23 @@
+using System;
+
+class Demo2
+{
+    static void Main()
+    {
+        // ----- Boxing -----
+        int a = 10;
+        double b = a;   // implicit conversion (boxing-like widening)
+
+        Console.WriteLine("Boxing Type");
+        Console.WriteLine("int value: " + a);
+        Console.WriteLine("double value: " + b);
+
+        // ----- Unboxing -----
+        double x = 12.7;
+        int y = (int)x;   // explicit casting (unboxing / narrowing)
+
+        Console.WriteLine("\nUnboxing Type");
+        Console.WriteLine("double value: " + x);
+        Console.WriteLine("int value: " + y);
+    }
+}
