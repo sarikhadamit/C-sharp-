@@ -1,0 +1,51 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter number of dimensions: ");
+        int d = int.Parse(Console.ReadLine());
+
+        // Declare 3D jagged array
+        int[][][] arr = new int[d][][];
+
+        for (int i = 0; i < d; i++)
+        {
+            Console.Write($"Enter number of rows for dimension {i}: ");
+            int rows = int.Parse(Console.ReadLine());
+
+            arr[i] = new int[rows][];
+
+            for (int j = 0; j < rows; j++)
+            {
+                Console.Write($"Enter number of columns for dimension {i}, row {j}: ");
+                int cols = int.Parse(Console.ReadLine());
+
+                arr[i][j] = new int[cols];
+
+                for (int k = 0; k < cols; k++)
+                {
+                    Console.Write($"Enter element [{i}][{j}][{k}]: ");
+                    arr[i][j][k] = int.Parse(Console.ReadLine());
+                }
+            }
+        }
+
+        // Printing elements
+        Console.WriteLine("\n3D Jagged Array Elements:");
+        for (int i = 0; i < d; i++)
+        {
+            Console.WriteLine($"Dimension {i}:");
+            for (int j = 0; j < arr[i].Length; j++)
+            {
+                for (int k = 0; k < arr[i][j].Length; k++)
+                {
+                    Console.Write(arr[i][j][k] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+    }
+}
