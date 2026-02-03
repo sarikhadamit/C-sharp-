@@ -1,0 +1,43 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Get size from user
+        Console.Write("Enter first dimension size: ");
+        int x = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter second dimension size: ");
+        int y = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter third dimension size: ");
+        int z = int.Parse(Console.ReadLine());
+
+        // Create 3D array
+        int[,,] arr = new int[x, y, z];
+
+        // Get elements from user
+        for (int i = 0; i < x; i++)
+            for (int j = 0; j < y; j++)
+                for (int k = 0; k < z; k++)
+                {
+                    Console.Write("Enter element [" + i + "," + j + "," + k + "]: ");
+                    arr[i, j, k] = int.Parse(Console.ReadLine());
+                }
+
+        // Print elements
+        Console.WriteLine("\n3D Array Elements:");
+        for (int i = 0; i < x; i++)
+        {
+            Console.WriteLine("Layer " + i + ":");
+            for (int j = 0; j < y; j++)
+            {
+                for (int k = 0; k < z; k++)
+                    Console.Write(arr[i, j, k] + "\t");
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+    }
+}
