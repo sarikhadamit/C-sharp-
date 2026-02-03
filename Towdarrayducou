@@ -1,0 +1,81 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter number of rows: ");
+        int rows = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter number of columns: ");
+        int cols = int.Parse(Console.ReadLine());
+
+        int[,] arr = new int[rows, cols];
+
+        // Input elements
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write("Enter element [" + i + "," + j + "]: ");
+                arr[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        Console.WriteLine("\n2D Array:");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write(arr[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+
+        Console.WriteLine("\nDuplicate Elements and Count:");
+
+        bool foundDuplicate = false;
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                int count = 0;
+
+                for (int r = 0; r < rows; r++)
+                {
+                    for (int c = 0; c < cols; c++)
+                    {
+                        if (arr[i, j] == arr[r, c])
+                            count++;
+                    }
+                }
+
+                // Print only once and if duplicate
+                if (count > 1)
+                {
+                    bool printed = false;
+                    for (int x = 0; x < i; x++)
+                    {
+                        for (int y = 0; y < cols; y++)
+                        {
+                            if (arr[x, y] == arr[i, j])
+                                printed = true;
+                        }
+                    }
+
+                    if (!printed)
+                    {
+                        Console.WriteLine(arr[i, j] + " occurs " + count + " times");
+                        foundDuplicate = true;
+                    }
+                }
+            }
+        }
+
+        if (!foundDuplicate)
+        {
+            Console.WriteLine("No duplicate elements found");
+        }
+    }
+}
