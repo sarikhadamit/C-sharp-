@@ -1,0 +1,17 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        object a = 10;        // int
+        object b = 5.5f;      // float
+        object c = 'A';       // char
+        object d = "Hello";   // string
+
+        Console.WriteLine(a);
+        Console.WriteLine(b);
+        Console.WriteLine(c);
+        Console.WriteLine(d);
+    }
+}
