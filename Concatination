@@ -1,0 +1,14 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string name = "Rahul";
+        string surname = "Kumar";
+
+        Console.WriteLine("Name: " + name);
+        Console.WriteLine("Surname: " + surname);
+        Console.WriteLine("Full Name: " + name + " " + surname);
+    }
+}
