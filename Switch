@@ -1,0 +1,25 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            switch (i)
+            {
+                case 2:
+                    Console.WriteLine("Skipping 2");
+                    continue;   // skips remaining code and goes to next loop
+
+                case 4:
+                    Console.WriteLine("Skipping 4");
+                    continue;
+
+                default:
+                    Console.WriteLine("Number: " + i);
+                    break;
+            }
+        }
+    }
+}
