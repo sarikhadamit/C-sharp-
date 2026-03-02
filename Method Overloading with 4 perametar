@@ -1,0 +1,36 @@
+using System;
+
+class Demo
+{
+    public void Show()
+    {
+        Console.WriteLine("Method with no parameter");
+    }
+
+    public void Show(int a)
+    {
+        Console.WriteLine("Integer value: " + a);
+    }
+
+    public void Show(double b)
+    {
+        Console.WriteLine("Double value: " + b);
+    }
+    public void Show(string name)
+    {
+        Console.WriteLine("String value: " + name);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Demo obj = new Demo();
+
+        obj.Show();          
+        obj.Show(10);        
+        obj.Show(10.5);     
+        obj.Show("Zoro");    
+    }
+}
