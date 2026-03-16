@@ -1,0 +1,35 @@
+using System;
+
+public class Demo
+{
+    
+    public void Calculate(int num1, int num2, out int square, out int cube)
+    {
+        square = num1 * num1;
+        cube = num2 * num2 * num2;
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Demo d = new Demo();
+        
+        
+        Console.Write("Enter number for square: ");
+        int n1 = Convert.ToInt32(Console.ReadLine());
+        
+        
+        Console.Write("Enter number for cube: ");
+        int n2 = Convert.ToInt32(Console.ReadLine());
+
+        int sq, cu; 
+
+      
+        d.Calculate(n1, n2, out sq, out cu);
+
+        Console.WriteLine("Square is: " + sq);
+        Console.WriteLine("Cube is: " + cu);
+    }
+}
