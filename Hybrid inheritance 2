@@ -1,0 +1,62 @@
+using System;
+
+
+class A
+{
+    protected int a = 10;
+    
+    public A()
+    {
+        Console.WriteLine("a is : " + a);
+    }
+}
+
+
+class B : A
+{
+    public B()
+    {
+        Console.WriteLine("B is child of A");
+    }
+}
+
+class C : A
+{
+    public C()
+    {
+        Console.WriteLine("C is child of A : " + a);
+    }
+}
+
+
+class E : C
+{
+    public E()
+    {
+        Console.WriteLine("E is child of C : " + a);
+    }
+}
+
+
+class D : A
+{
+    public D()
+    {
+        Console.WriteLine("D is child of A : " + a);
+    }
+}
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+    
+        B ob1 = new B();
+        Console.WriteLine("-------------------");
+        
+        E ob2 = new E();
+        Console.WriteLine("-------------------");
+        
+        D ob3 = new D();
+    }
+}
