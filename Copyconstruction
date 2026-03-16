@@ -1,0 +1,32 @@
+using System;
+
+class Sum {
+    int x;
+
+    
+    public Sum(int x) {
+        Console.WriteLine("Parameterized Constructor : {0}", x);
+        this.x = x;
+    }
+
+    
+    public Sum(Sum s1, Sum s2) {
+        Console.WriteLine("Copy Constructor s1 - {0}, s2 - {1}", s1.x, s2.x);
+        this.x = s1.x + s2.x;
+    }
+
+    public void Display(Sum s1, Sum s2) {
+        
+        Console.WriteLine("Sum is s1 - {0} + s2 - {1} = {2}", s1.x, s2.x, this.x);
+    }
+}
+
+class CopyConstructor {
+    static void Main() {
+        
+        Sum s1 = new Sum(10);
+        Sum s2 = new Sum(20);
+        Sum s3 = new Sum(s1, s2)
+        s3.Display(s1, s2);
+    }
+}
