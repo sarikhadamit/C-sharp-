@@ -1,0 +1,32 @@
+using System;
+
+public class MathOperations
+{
+    
+    public void SumSub(ref int a, ref int b)
+    {
+        a = 20;
+        b = 10; 
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        int a = 10;
+        int b = 20;
+
+      
+        Console.WriteLine("a is before: {0}", a);
+        Console.WriteLine("b is before: {0}", b);
+
+        
+        MathOperations m = new MathOperations();
+
+    
+        m.SumSub(ref a, ref b);
+        Console.WriteLine("a is after: {0}", a);
+        Console.WriteLine("b is after: {0}", b);
+    }
+}
