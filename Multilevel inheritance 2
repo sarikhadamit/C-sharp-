@@ -1,0 +1,43 @@
+using System;
+
+public class Parent 
+{
+    
+    protected int Square(int a) 
+    {
+        return a * a;
+    }
+}
+
+public class Child : Parent 
+{
+    
+    protected int Helper(int a) 
+    {
+        return Square(a);
+    }
+}
+
+public class Subchild : Child 
+{
+    
+    public int GetSquare() 
+    {
+        Console.Write("Enter number: ");
+        int input = int.Parse(Console.ReadLine());
+        return Helper(input); 
+    }
+}
+
+public class MainClass 
+{
+    public static void Main() 
+    {
+        
+        Subchild sc = new Subchild();
+        
+        
+        int result = sc.GetSquare();
+        Console.WriteLine("Square of number is: " + result);
+    }
+}
