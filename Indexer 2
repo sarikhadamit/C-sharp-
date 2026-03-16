@@ -1,0 +1,64 @@
+using System;
+
+class Indexers 
+{
+    private int[] arr = new int[3];
+
+    
+    public int this[int index] 
+    {
+        set 
+        {
+            
+            if (index >= 0 && index < arr.Length) 
+            {
+                
+                if (value > 0) 
+                {
+                    arr[index] = value;
+                }
+                else 
+                {
+                    Console.WriteLine("Negative values are not allowed.");
+                }
+            }
+            else 
+            {
+                Console.WriteLine($"Please enter an index between 0 and {arr.Length - 1}.");
+            }
+        }
+        get 
+        {
+            
+            if (index >= 0 && index < arr.Length) 
+            {
+                return arr[index];
+            }
+            else 
+            {
+                Console.WriteLine($"Please enter an index between 0 and {arr.Length - 1}.");
+                return -1; // Returning -1 to indicate an error
+            }
+        }
+    }
+}
+
+public class MainClass 
+{
+    public static void Main() 
+    {
+        Indexers indx = new Indexers();
+
+      
+        indx[0] = -10; 
+        indx[1] = 20;  
+        indx[2] = 30; 
+        indx[5] = 30;  
+
+        // Printing results
+        Console.WriteLine(indx[0]); 
+        Console.WriteLine(indx[1]); 
+        Console.WriteLine(indx[2]); 
+        Console.WriteLine(indx[3]); 
+    }
+}
