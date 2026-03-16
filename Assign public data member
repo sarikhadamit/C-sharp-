@@ -1,0 +1,22 @@
+using System;
+
+class Demo 
+{
+    static void Main() 
+    {
+        
+        Data d1 = new Data();
+        
+    
+        d1.a = Convert.ToInt32(Console.ReadLine());
+        
+        
+        Console.WriteLine("Value of a: " + d1.a);
+    }
+}
+
+class Data 
+{
+    
+    public int a;
+}
