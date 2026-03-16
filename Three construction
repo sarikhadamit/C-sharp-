@@ -1,0 +1,36 @@
+using System;
+
+class Demos 
+{
+    static void Main() 
+    {
+        
+        Constructor c1 = new Constructor();
+        
+        
+        Constructor c2 = new Constructor(10);
+    }
+}
+
+class Constructor 
+{
+    int a;
+
+    
+    static Constructor() 
+    {
+        Console.WriteLine("Static Constructor");
+    }
+
+    
+    public Constructor() 
+    {
+        Console.WriteLine("Default Constructor");
+    }
+
+    public Constructor(int a) 
+    {
+        this.a = a;
+        Console.WriteLine("Parameterized Constructor");
+    }
+}
