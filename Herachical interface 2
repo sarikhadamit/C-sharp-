@@ -1,0 +1,76 @@
+using System;
+
+interface IAnimal 
+{
+    void Sound();
+    void Eat();
+}
+
+interface IDog : IAnimal 
+{
+    void Bark();
+}
+
+
+interface ICat : IAnimal 
+{
+    void Meow();
+}
+
+
+public class DogClass : IDog 
+{
+    public void Sound() 
+    {
+        Console.WriteLine("The dog makes a sound.");
+    }
+    
+    public void Eat() 
+    {
+        Console.WriteLine("The dog eats.");
+    }
+    
+    public void Bark() 
+    {
+        Console.WriteLine("The labrador says: Woof! Woof!");
+    }
+}
+
+
+public class CatClass : ICat 
+{
+    public void Sound() 
+    {
+        Console.WriteLine("The cat makes a sound.");
+    }
+    
+    public void Eat() 
+    {
+        Console.WriteLine("The cat eats.");
+    }
+    
+    public void Meow() 
+    {
+        Console.WriteLine("The cat says: Meow!");
+    }
+}
+
+public class Program 
+{
+    public static void Main(string[] args) 
+    {
+        
+        DogClass d = new DogClass();
+        d.Sound();
+        d.Eat();
+        d.Bark();
+
+        Console.WriteLine("---");
+
+        
+        CatClass c = new CatClass();
+        c.Sound();
+        c.Eat();
+        c.Meow();
+    }
+}
