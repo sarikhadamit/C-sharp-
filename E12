@@ -1,0 +1,45 @@
+using System;
+
+class Parent {
+    public int[][] arr; 
+
+    public Parent() {
+        
+        arr = new int[5][]; 
+        
+        // Initialize each row with different lengths
+        arr[0] = new int[5];
+        arr[1] = new int[2];
+        arr[2] = new int[3];
+        arr[3] = new int[1];
+        arr[4] = new int[5];
+    }
+}
+
+class Child : Parent {
+    public void Display() {
+        foreach (int[] i in arr) {
+            foreach (int v in i) {
+                Console.Write(v + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+class MainClass {
+    static void Main() {
+        Child ch = new Child();
+        int count = 0;
+
+        
+        for (int i = 0; i < ch.arr.Length; i++) {
+            for (int j = 0; j < ch.arr[i].Length; j++) {
+                ch.arr[i][j] = count++;
+            }
+        }
+
+      
+        ch.Display();
+    }
+}
